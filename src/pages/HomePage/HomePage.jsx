@@ -1,18 +1,9 @@
-import axios from 'axios';
-import React, { useEffect, useState } from 'react'
 import Card from '../../components/Card/Card';
 import { Link } from 'react-router-dom';
 
 export const API_URL = import.meta.env.VITE_BACK_URL
 
 export default function HomePage() {
-  const [pokemon, setPokemon] = useState({})
-
-  useEffect(() => {
-    axios.get(`${API_URL}/pokemon/gengar`)
-      .then(response => setPokemon(response.data))
-      .catch(error => console.log(error));
-  }, []);
 
   return (
     <div className='p-12 w-full h-full'>

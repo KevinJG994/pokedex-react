@@ -1,0 +1,64 @@
+.badge-pink {
+    background-color: #f472b6; 
+    color: white;
+}
+
+.badge-gray {
+    background-color: #9ca3af; 
+    color: white;
+}
+
+.badge-brown {
+    background-color: #a0522d; 
+    color: white;
+}
+
+.badge-purple {
+    background-color: #a78bfa; 
+    color: white;
+}
+
+.badge-indigo {
+    background-color: #6366f1; 
+    color: white;
+}
+
+.badge-lime {
+    background-color: #84cc16; 
+    color: white;
+}
+
+.badge-cyan {
+    background-color: #22d3ee; 
+    color: white;
+}
+
+.badge-orange {
+    background-color: #fb923c;
+    color: white;
+}
+
+.badge-light-blue {
+    background-color: #60a5fa; 
+    color: white;
+}
+
+.badge-dark-blue {
+    background-color: #1e3a8a; 
+    color: white;
+}
+
+.badge-black {
+    background-color: #000000; 
+    color: white;
+}
+
+.badge-silver {
+    background-color: #c0c0c0; 
+    color: black;
+}
+
+.badge-violet {
+    background-color: #8b5cf6; 
+    color: white;
+}
