@@ -1,14 +1,23 @@
+import { Route, Routes } from 'react-router-dom'
 import './App.css'
+import Footer from './components/Footer/Footer'
+import Navbar from './components/Navbar/Navbar'
+import HomePage from './pages/HomePage/HomePage'
+import PokemonDetails from './pages/PokemonDetails/PokemonDetails'
 
 function App() {
 
-
   return (
-    <>
-      <h1 class="text-3xl font-bold underline text-amber-300">
-        Hello world!
-      </h1>
-    </>
+    <div className='h-full'>
+      <Navbar />
+
+      <Routes>
+        <Route path='/' element={<HomePage />} />
+        <Route path='/pokemonDetail/1' element={<PokemonDetails />} />
+      </Routes>
+
+      <Footer />
+    </div>
   )
 }
 
