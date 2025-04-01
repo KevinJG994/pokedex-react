@@ -6,7 +6,6 @@ export default function HomePage() {
   return (
     <div className='p-12 w-full h-full'>
       <div className='flex justify-center items-center'>
-        {/* <img src="/assets/Pokeball.png" alt="" className='w-16 mr-6' /> */}
         <h2 className='text-5xl text-(--red-primary)'>Pokédex</h2>
       </div>
 
