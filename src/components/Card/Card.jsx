@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { getBadgeColor } from '../../utils/utils';
 import { getPokemonDetails, getPokemonList } from '../../services/pokemon.service';
+import { Link } from 'react-router-dom';
 
 
 export default function Card() {
@@ -32,33 +33,35 @@ export default function Card() {
     return (
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {pokemon.map((pokemon, index) => (
-                <div className="card bg-base-300 w-96 shadow-lg" key={index}>
-                    <figure>
-                        <img
-                            src={pokemon.sprites?.other?.["official-artwork"]?.front_default}
-                            alt={pokemon.name}
-                            className='w-48 py-2' />
-                    </figure>
-                    <div className="card-body">
-                        <p className='flex justify-center text-xl'>
-                            Nº: {pokemon.id < 10 ? `00${pokemon.id}` : pokemon.id < 100 ? `0${pokemon.id}` : `${pokemon.id}`}
-                        </p>
-                        <h2 className="card-title justify-center text-2xl">
-                            {pokemon.name ? pokemon.name.toUpperCase() : '...'}
-                        </h2>
-                        <div className="card-actions justify-center my-4">
-                            {pokemon.types ? (
-                                pokemon.types.map((t, index) => (
-                                    <div key={index} className={`badge ${getBadgeColor(t.type.name)}`}>
-                                        {t.type.name.toUpperCase()}
-                                    </div>
-                                ))
-                            ) : (
-                                '...'
-                            )}
+                <Link to={`/pokemonDetail/${pokemon.id}`} key={index}>
+                    <div className="card bg-base-300 w-96 shadow-lg">
+                        <figure>
+                            <img
+                                src={pokemon.sprites?.other?.["official-artwork"]?.front_default}
+                                alt={pokemon.name}
+                                className='w-48 py-2' />
+                        </figure>
+                        <div className="card-body">
+                            <p className='flex justify-center text-xl'>
+                                Nº: {pokemon.id < 10 ? `00${pokemon.id}` : pokemon.id < 100 ? `0${pokemon.id}` : `${pokemon.id}`}
+                            </p>
+                            <h2 className="card-title justify-center text-2xl">
+                                {pokemon.name ? pokemon.name.toUpperCase() : '...'}
+                            </h2>
+                            <div className="card-actions justify-center my-4">
+                                {pokemon.types ? (
+                                    pokemon.types.map((t, index) => (
+                                        <div key={index} className={`badge ${getBadgeColor(t.type.name)}`}>
+                                            {t.type.name.toUpperCase()}
+                                        </div>
+                                    ))
+                                ) : (
+                                    '...'
+                                )}
+                            </div>
                         </div>
                     </div>
-                </div>
+                </Link>
             ))}
         </div>
     );

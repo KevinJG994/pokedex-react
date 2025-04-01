@@ -15,10 +15,9 @@ export default function HomePage() {
         <button>Boton</button>
         seach
       </div>
-      <div className='grid grid-cols-4 justify-center'>
-        <Link to='/pokemonDetail/1'>
-          <Card />
-        </Link>
+      
+      <div className='grid grid-cols-4 gap-4'>
+        <Card />
       </div>
     </div>
   )

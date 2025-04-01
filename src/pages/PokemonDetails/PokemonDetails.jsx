@@ -3,13 +3,13 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 
 export default function PokemonDetails() {
-  const { idPokemon } = useParams(); // Obtén el ID desde la URL
+  const { pokemonId } = useParams(); // Obtén el ID desde la URL
   const [pokemon, setPokemon] = useState(null);
 
   useEffect(() => {
     const fetchPokemonDetails = async () => {
       try {
-        const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${idPokemon}`);
+        const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemonId}`);
         setPokemon(response.data);
       } catch (error) {
         console.error('Error fetching Pokémon details:', error);
@@ -17,7 +17,7 @@ export default function PokemonDetails() {
     };
 
     fetchPokemonDetails();
-  }, [idPokemon]);
+  }, [pokemonId]);
 
   if (!pokemon) {
     return <div>Loading...</div>;
